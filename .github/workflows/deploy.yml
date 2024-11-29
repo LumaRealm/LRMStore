@@ -39,6 +39,7 @@ jobs:
           script: |
             cd /var/www/myapp
             git pull origin main
+            ls
             cd build
             npm ci --omit="dev"
             npm install --production
