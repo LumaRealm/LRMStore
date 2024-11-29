@@ -38,5 +38,7 @@ jobs:
           port: 22
           script: |
             ls
-            cd /myapp/LRMStore
+            pwd
+            ls -l
+            cd myapp/LRMStore
  
