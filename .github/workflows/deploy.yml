@@ -32,10 +32,14 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
             nvm use 22
+
+            git config --global --add safe.directory /var/www/myapp
             cd /var/www/myapp
             git pull origin main
             node ace build
+
+            mkdir -p build
             cp .env build/.env
             cd build
-            npm ci --omit="dev"
-            pm2 restart server.js
+            npm ci --omit=dev
+            pm2 restart "myapp" || pm2 start ./server.js --name "myapp"
