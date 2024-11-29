@@ -24,11 +24,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Шаг 4: Собираем приложение (если нужно)
-      - name: Build Application
-        run: npm run build  # или другой ваш скрипт сборки
-
-      # Шаг 5: Деплой на сервер
+ 
+      # Шаг 4: Деплой на сервер
       - name: Deploy to Server
         uses: appleboy/ssh-action@v0.1.8
         with:
@@ -40,6 +37,7 @@ jobs:
             cd /var/www/myapp
             git pull origin main
             ls
+            node ace build
             cd build
             npm ci --omit="dev"
             npm install --production
