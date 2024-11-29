@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '22.11.0'
 
       # Шаг 3: Устанавливаем зависимости
       - name: Install Dependencies
@@ -36,7 +36,7 @@ jobs:
           script: |
             cd /var/www/myapp
             git pull origin main
-            ls
+            npm install
             node ace build
             cd build
             npm ci --omit="dev"
