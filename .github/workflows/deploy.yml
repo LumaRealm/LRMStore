@@ -32,11 +32,11 @@ jobs:
       - name: Deploy to Server
         uses: appleboy/ssh-action@v0.1.8
         with:
-          host: ${{ secrets.SERVER_HOST }}
+          host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_KEY }}
-          port: 
-          script: 42444
+          port: 22
+          script: |
             cd /myapp/LRMStore/build
             git pull origin main
             npm ci --omit="dev
