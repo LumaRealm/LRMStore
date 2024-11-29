@@ -40,5 +40,4 @@ jobs:
             ls
             pwd
             ls -l
-            cd myapp/LRMStore
- 
+            cd LRMStore
