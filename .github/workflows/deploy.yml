@@ -18,8 +18,8 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_KEY }}
-          source: './build/*'  # Указываем только папку build
-          target: '/var/www/myapp/build'  # Путь на сервере
+          source: './*'  # Указываем только папку build
+          target: '/var/www/myapp/'  # Путь на сервере
 
       - name: Restart application with PM2
         uses: appleboy/ssh-action@v0.1.0
