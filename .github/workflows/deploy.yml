@@ -27,10 +27,11 @@ jobs:
  
       # Шаг 4: Деплой на сервер
       - name: Deploy to Server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        uses: appleboy/ssh-action@v1.2.0
         with:
-          server: 45.153.191.134
-          username: root
-          password: Wsxcvbnm97@
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_KEY }}
           port: 22
-          server-dir: /var/www/myapp/
+          script: |
+            ls -al
