@@ -33,4 +33,4 @@ jobs:
           username: root
           password: Wsxcvbnm97@
           port: 22
-          server-dir: /var/www/myapp
+          server-dir: /var/www/myapp/
