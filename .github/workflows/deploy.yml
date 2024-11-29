@@ -33,7 +33,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.8
         with:
           host: 90.156.171.240
-          username: ${{ secrets.SERVER_USER }}
+          username: root
           key: ${{ secrets.SERVER_KEY }}
           port: 22
           script: |
