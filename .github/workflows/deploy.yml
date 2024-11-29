@@ -36,10 +36,11 @@ jobs:
             git config --global --add safe.directory /var/www/myapp
             cd /var/www/myapp
             git pull origin main
+            npm i
             node ace build
 
             mkdir -p build
             cp .env build/.env
             cd build
-            npm ci --omit=dev
+            npm ci --omit="dev"
             pm2 restart "myapp" || pm2 start ./server.js --name "myapp"
