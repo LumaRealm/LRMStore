@@ -28,8 +28,10 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_KEY }}
           script: |
-            cd /var/www/myapp/build
+            cd /var/www/myapp
+            node ace build
             cp ../.env .env 
+            cd build
             nvm use         
-            npm ci --omit=dev
+            npm ci --omit="dev" 
             pm2 restart bin/server.js
