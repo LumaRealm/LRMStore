@@ -28,10 +28,13 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_KEY }}
           script: |
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+            nvm use 22
             cd /var/www/myapp
-            node ace build
-            cp ../.env .env 
+            git pull origin main
+            cp .env build/.env
             cd build
-            nvm use         
-            npm ci --omit="dev" 
-            pm2 restart bin/server.js
+            npm ci --omit=dev
+            pm2 restart server.js
