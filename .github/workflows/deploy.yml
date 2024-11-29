@@ -37,8 +37,7 @@ jobs:
           key: ${{ secrets.SERVER_KEY }}
           port: 22
           script: |
-            cd /myapp/LRMStore/build
-            git pull origin main
-            npm ci --omit="dev
+            cd myapp/LRMStore/build
+            npm ci --omit="dev"
             node bin/server.js
             pm2 restart server.js
