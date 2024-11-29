@@ -29,8 +29,8 @@ jobs:
       - name: Deploy to Server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_KEY }}
+          server: 45.153.191.134
+          username: root
+          password: Wsxcvbnm97@
           port: 22
           server-dir: /var/www/myapp
