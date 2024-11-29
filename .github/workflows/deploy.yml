@@ -32,12 +32,15 @@ jobs:
       - name: Deploy to Server
         uses: appleboy/ssh-action@v0.1.8
         with:
-          host: 90.156.171.240
-          username: root
           key: ${{ secrets.SERVER_KEY }}
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
           port: 22
           script: |
-            ls
-            pwd
-            ls -l
-
+            cd /var/www/myapp
+            git pull origin main
+            cp .env build/.env 
+            cd build
+            npm ci --omit="dev"
+            pm2 restart bin/server.js
+ 
