@@ -34,4 +34,4 @@ jobs:
           key: ${{ secrets.SERVER_KEY }}
           port: 22
           script: |
-            ls -al
+            cd /var/www/myapp
