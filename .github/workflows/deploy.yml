@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 22.11.0
 
       # Шаг 3: Устанавливаем зависимости
       - name: Install Dependencies
@@ -38,8 +38,6 @@ jobs:
           port: 22
           script: |
             cd myapp/LRMStore
-            node ace build
-            cd build
             npm ci --omit="dev"
             node bin/server.js
             pm2 restart server.js
