@@ -40,4 +40,4 @@ jobs:
             ls
             pwd
             ls -l
-            cd LRMStore
+            cd ~/LRMStore
