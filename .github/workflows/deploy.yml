@@ -33,4 +33,4 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_KEY }}
           port: 22
-          server_dir: /var/www/myapp
+          server-dir: /var/www/myapp
