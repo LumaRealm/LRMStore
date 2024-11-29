@@ -34,10 +34,3 @@ jobs:
           key: ${{ secrets.SERVER_KEY }}
           port: 22
           server_dir: /var/www/myapp
-          script: |
-            cd /var/www/myapp
-            git pull origin main
-            cd build
-            npm ci --omit="dev"
-            npm install --production
-            pm2 start server.js
