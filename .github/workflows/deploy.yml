@@ -30,7 +30,7 @@ jobs:
 
       # Шаг 5: Отправляем приложение на сервер
       - name: Deploy to Server
-        uses: appleboy/ssh-action@v0.1.8
+        uses: appleboy/ssh-action@master
         with:
           key: ${{ secrets.SERVER_KEY }}
           host: ${{ secrets.SERVER_HOST }}
