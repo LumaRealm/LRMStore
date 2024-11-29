@@ -26,7 +26,7 @@ export default function Home() {
     <div className="text">
       <p>Duis quis</p>
       <p>nec sapien</p>
-      <button>Moree</button>
+      <button>Moreeу</button>
     </div>
     </>
   )
