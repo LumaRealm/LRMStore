@@ -43,4 +43,4 @@ jobs:
             cp .env build/.env
             cd build
             npm ci --omit="dev"
-            pm2 restart "myapp" || pm2 start ./server.js --name "myapp"
+            pm2 restart "server" || pm2 start bin/server.js --name "server"
