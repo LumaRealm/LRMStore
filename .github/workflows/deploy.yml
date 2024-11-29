@@ -41,6 +41,7 @@ jobs:
             node ace build
             git pull origin main
             cp .env build/.env 
+            ls
             cd build
             npm ci --omit="dev"
             pm2 restart bin/server.js
