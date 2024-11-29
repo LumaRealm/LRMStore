@@ -34,7 +34,8 @@ jobs:
             nvm use 22
             cd /var/www/myapp
             git pull origin main
+            node ace build
             cp .env build/.env
             cd build
-            npm ci --omit=dev
+            npm ci --omit="dev"
             pm2 restart server.js
