@@ -38,6 +38,4 @@ jobs:
           port: 22
           script: |
             cd myapp/LRMStore
-            npm ci --omit="dev"
-            node bin/server.js
-            pm2 restart server.js
+ 
