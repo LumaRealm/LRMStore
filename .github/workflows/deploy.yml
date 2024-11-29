@@ -36,10 +36,6 @@ jobs:
           script: |
             cd /var/www/myapp
             git pull origin main
-            curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-            source ~/.bashrc
-            nvm install 22.11.0
-            npm install -g pm2
             npm install
             node ace build
             cd build
