@@ -24,9 +24,9 @@ export default function Home() {
       </div>
     </div>
     <div className="text">
-      <p>На технических работах</p>
-      <p>Ожидайте пожалуйста</p>
-      <button>Report</button>
+      <p>Technical work</p>
+      <p>Sorry</p>
+      <button>More</button>
     </div>
     </>
   )
