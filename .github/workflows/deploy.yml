@@ -38,8 +38,7 @@ jobs:
             git pull origin main
             npm i
             node ace build
-
-            mkdir -p build
+ 
             cp .env build/.env
             cd build
             npm ci --omit="dev"
